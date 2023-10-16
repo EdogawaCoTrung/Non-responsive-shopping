@@ -434,7 +434,7 @@ body{
 .header:before{
     animation: slide-in 2s .5s cubic-bezier(0, .52, 0, .99) forwards;
     background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.8)),
-    url(./MU.avif) no-repeat bottom;
+    url(./MU.jpg) no-repeat bottom;
     opacity: 0;
     background-size: cover;
     content: "";
@@ -951,11 +951,14 @@ h3{
     align-items: center;
 }
 .card-image{
+    position:relative;
     background:rgb(239, 239, 239);
     /* width: 100%;
     height: 100%; */
     margin:0;
     padding:0;
+    display: flex;
+    z-index: -1;
 }
 .image{
     width: 100%;
@@ -963,6 +966,7 @@ h3{
     object-fit: cover;
     padding:0;
     margin:0;
+    z-index: 0;
 }
 .card-content{
     display: flex;
@@ -1113,4 +1117,72 @@ li:hover{
 }
 .lastcol{
     transform: translateY(1.2rem);
+}
+.card-image-button{
+    visibility: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    right:0;
+    background-color: antiquewhite;
+    z-index: 2;
+    padding:0;
+    margin:0;
+    
+}
+.card-image:hover .card-image-button{
+    visibility: visible;
+    animation:fade-in 0.5s;
+}
+.card-image:not(:hover) .card-image-button{
+    animation: fade-out 0.5s;
+    transition: 0.25s;
+}
+.card-image-button .buy{
+    border-radius: 20px;
+    color:black;
+    border: none;
+    padding: 11px 28px;
+    font-size: 15px;
+    font-family: Montserrat;
+    font-weight: 600;
+    background-color: white;
+}
+.buy:hover{
+    transform: none;
+    color: white;
+    background: rgba(255, 0, 0, 0.822);
+    transition: 0.25s;
+}
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+.model-fly-in{
+    transform: translateX(-400%);
+    transition:transform 0.5s;
+}
+.model-fly-in:nth-child(2)
+{
+    transform: translateX(400%);
+    transition: transform 0.5s;
+}
+.model-fly-in.show_model_fly_in{
+    transform: none;
 }
