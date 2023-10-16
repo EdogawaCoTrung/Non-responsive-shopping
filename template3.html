@@ -33,21 +33,23 @@
                 </div>
             </div>
             <div class="data">
-                <div class="col">
-                    <p class="num" data-val="31">00</p>
-                    <p class="col-detail">YEARS OF EXPERIENCED</p>
-                </div>
-                <div class="col">
-                    <p class="num" data-val="1000">0000</p>
-                    <p class="col-detail">COLLECTIONS</p>
-                </div>
-                <div class="col">
-                    <p class="num" data-val="50">00</p>
-                    <p class="col-detail">STAFFS</p>
-                </div>
-                <div class="col">
-                    <p class="num" data-val="1000">0000</p>
-                    <p class="col-detail">HAPPY CUSTOMERS</p>
+                <div class="col-wrapper">
+                    <div class="col">
+                        <p class="num" data-val="31">00</p>
+                        <p class="col-detail">YEARS OF EXPERIENCED</p>
+                    </div>
+                    <div class="col">
+                        <p class="num" data-val="1000">0000</p>
+                        <p class="col-detail">COLLECTIONS</p>
+                    </div>
+                    <div class="col">
+                        <p class="num" data-val="50">00</p>
+                        <p class="col-detail">STAFFS</p>
+                    </div>
+                    <div class="col">
+                        <p class="num" data-val="1000">0000</p>
+                        <p class="col-detail">HAPPY CUSTOMERS</p>
+                    </div>
                 </div>
                 <p class="slogan">Manchester United combines the passion of its fans with a burning intensity unlike any other club</p>
             </div>
@@ -349,18 +351,32 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script>
             var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView:1,
+                            
+                        },
+                        528: {
+                            slidesPerView:2,
+                         
+                        }, 
+                        950: {
+                            slidesPerView:3,
+                           
+                        },
+                    }, 
+                });
         </script>
     </body>
 </html>
